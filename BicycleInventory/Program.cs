@@ -1,9 +1,31 @@
 ﻿using BicycleInventory.Components;
+using BicycleInventory.DBContext;
+using BicycleInventory.Model;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 class Program
 {
     static void Main()
     {
+        var connectionString = "Server=DESKTOP-VCNB237;Database=Bicycle;Integrated Security=True;TrustServerCertificate=True;";
+
+        var serviceProvider = new ServiceCollection()
+                .AddDbContext<BicycleDbContext>(options =>
+                    options.UseSqlServer(connectionString))
+                .BuildServiceProvider();
+
+
+
+
+
+
+
+
+
+
+
+
         Pedal pedal1 = new Pedal(partCount: 13);
         Pedal pedal2 = new Pedal(partCount: 4);
         Tube tube1 = new Tube(partCount: 13);

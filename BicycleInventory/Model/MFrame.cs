@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BicycleInventory.Model
 {
-    internal class Frame
+    public class MFrame
     {
+        public int FrameId { get; set; }
+        public int quantity { get; set; }
     }
 }
